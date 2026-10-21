@@ -1,149 +1,94 @@
-IAI600 – Diabetes Health Indicators – Group 3
+# IAI600 – Diabetes Health Indicators – Group 3
 
-Project Overview
+Machine Learning Project | University West | Fall 2026
 
-This project was developed as part of the course Introduction to Applied Artificial Intelligence and Machine Learning (IAI600) at University West, Sweden.
+## Project Overview
 
-The objective is to investigate whether machine learning algorithms can classify diabetes-related status based on health and lifestyle indicators.
+This project investigates whether machine learning models can classify diabetes-related status using health and lifestyle indicators.
 
-We compare two supervised machine learning algorithms:
+We compare two supervised learning algorithms:
 
-Logistic Regression
+- Logistic Regression
+- Random Forest
 
-Random Forest
+## Dataset
 
-Dataset
+**Source:** [Diabetes Health Indicators – Kaggle](https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset)
 
-Source: Diabetes Health Indicators Dataset – Kaggle
+The dataset originates from the 2015 Behavioral Risk Factor Surveillance System (BRFSS).
 
-The dataset is derived from the 2015 Behavioral Risk Factor Surveillance System (BRFSS).
+**Dataset file:** `diabetes_binary_health_indicators_BRFSS2015.csv`
 
-We use the file diabetes_binary_health_indicators_BRFSS2015.csv.
+| Property | Value |
+|---|---|
+| Observations | 253,680 |
+| Input features | 21 |
+| Target variable | Diabetes_binary |
+| Class 0 | 86.07% |
+| Class 1 | 13.93% |
 
-Observations: 253,680
+## Methodology
 
-Input features: 21
+1. Dataset inspection and Exploratory Data Analysis (EDA)
+2. Data quality checks and preprocessing
+3. Stratified train/test split (80/20)
+4. Logistic Regression training
+5. Random Forest training
+6. Model evaluation and comparison
+7. Feature importance analysis
 
-Target variable: Diabetes_binary
+## Model Performance
 
-Class 0: No diabetes (86.07%)
+| Metric | Logistic Regression | Random Forest |
+|---|---:|---:|
+| Accuracy | 0.8634 | 0.8594 |
+| Precision (Class 1) | 0.5338 | 0.4876 |
+| Recall (Class 1) | 0.1532 | 0.1784 |
+| F1-score (Class 1) | 0.2381 | 0.2612 |
+| ROC-AUC | 0.8209 | 0.7944 |
+| Average Precision | 0.4022 | 0.3678 |
 
-Class 1: Prediabetes or diabetes (13.93%)
+### Main Findings
 
-Methodology
+**Logistic Regression** achieved higher ROC-AUC and Average Precision.
 
-The project follows these main steps:
+**Random Forest** achieved slightly higher recall and F1-score for Class 1.
 
-Dataset inspection and Exploratory Data Analysis (EDA).
+Both models struggled to identify the minority class at the default classification threshold.
 
-Data-quality checks, including missing values and duplicate records.
+## How to Run
 
-Data preprocessing using StandardScaler, OneHotEncoder, and binary feature passthrough for Logistic Regression.
+1. Download `Diabetes_Project.ipynb` from this repository.
+2. Download the CSV dataset from Kaggle.
+3. Install Python, Jupyter Notebook, Pandas, Matplotlib and Scikit-Learn.
+4. Place the CSV in an accessible folder.
+5. Adjust the CSV file path in the notebook if necessary.
+6. Run all notebook cells.
 
-Stratified training/test split (80% / 20%).
+## Limitations
 
-Training Logistic Regression and Random Forest.
+- Survey data is self-reported.
+- The positive class combines prediabetes and diabetes.
+- The dataset is imbalanced.
+- Models were evaluated using a single train/test split.
+- Feature importance does not establish causation.
+- The models are not intended for medical diagnosis.
 
-Model evaluation using accuracy, precision, recall, F1-score, ROC-AUC, and Average Precision.
+## Group Members
 
-Feature importance analysis using Random Forest.
+- Sravani Manda
+- Ndifreke Gregory Bassey
+- Maju Anand
+- Daniel Sandström Hasselblad
 
-Model Results
+## Acknowledgment
 
-Metric
+ChatGPT was used to support learning, Python development, debugging and documentation. All group members are responsible for understanding and validating the submitted work.
 
-Logistic Regression
+## Course Information
 
-Random Forest
+**Course:** IAI600 – Introduction to Applied Artificial Intelligence and Machine Learning
 
-Accuracy
+**University:** University West (Högskolan Väst), Sweden
 
-0.8634
-
-0.8594
-
-Precision (Class 1)
-
-0.5338
-
-0.4876
-
-Recall (Class 1)
-
-0.1532
-
-0.1784
-
-F1-score (Class 1)
-
-0.2381
-
-0.2612
-
-ROC-AUC
-
-0.8209
-
-0.7944
-
-Average Precision
-
-0.4022
-
-0.3678
-
-Logistic Regression achieved higher ROC-AUC and Average Precision, while Random Forest achieved slightly higher recall and F1-score for Class 1.
-
-Both models showed limited recall for the minority class at the default classification threshold.
-
-How to Run the Project
-
-Download Diabetes_Project.ipynb from this repository.
-
-Download diabetes_binary_health_indicators_BRFSS2015.csv from the Kaggle link above.
-
-Install Python, Jupyter Notebook, Pandas, NumPy, Matplotlib, and Scikit-Learn.
-
-Place the dataset in a folder accessible to the notebook.
-
-Update the pd.read_csv() file path if necessary.
-
-Open the notebook in Jupyter and run all cells.
-
-Project Limitations
-
-The dataset contains self-reported survey information.
-
-The target combines prediabetes and diabetes into one positive class.
-
-The dataset has a substantial class imbalance.
-
-Model evaluation was performed using a single stratified 80/20 split.
-
-The models were not systematically hyperparameter-tuned.
-
-Feature importance does not establish causation.
-
-The models are educational classifiers and are not intended for medical diagnosis.
-
-Group Members
-
-Sravani Manda
-
-Ndifreke Gregory Bassey
-
-Maju Anand
-
-Daniel Sandström Hasselblad
-
-Acknowledgment
-
-Generative AI tools, including ChatGPT, were used to support learning, explain machine learning concepts, assist with Python programming, and help document the project. The group members remain responsible for reviewing, understanding, and validating the submitted work.
-
-Course
-
-IAI600 – Introduction to Applied Artificial Intelligence and Machine Learning
-
-University West (Högskolan Väst), Sweden
-
-Fall 2026
+**Semester:** Fall 2026
